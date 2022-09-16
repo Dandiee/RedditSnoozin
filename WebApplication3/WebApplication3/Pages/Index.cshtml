@@ -1,0 +1,19 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<h1>@Model.Roots.Count</h1>
+<ul>
+@foreach (var item in Model.Roots)
+{
+    <li>
+        <h5><a href="http://www.reddit.com/user/@item.data.name">@item.data.name</a></h5>
+        <div>@item.data.CreatedDt</div>
+        <div>
+            <img src="@item.data.snoovatar_img" width="64"/>
+        </div>
+        <hr/>
+    </li>
+}
+</ul>
